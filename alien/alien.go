@@ -13,14 +13,20 @@ var symbolValues = map[byte]int{
 func AlienToInt(s string) int {
 	total := 0
 	n := len(s)
+	i := 0
 
-	for i := 0; i < n; i++ {
-		value := symbolValues[s[i]]
-		if i+1 < n && symbolValues[s[i]] < symbolValues[s[i+1]] {
-			total -= value
-		} else {
-			total += value
+	for i < n {
+		curr := symbolValues[s[i]]
+		if i+1 < n {
+			next := symbolValues[s[i+1]]
+			if curr < next {
+				total += (next - curr)
+				i += 2 
+				continue
+			}
 		}
+		total += curr
+		i++
 	}
 
 	return total

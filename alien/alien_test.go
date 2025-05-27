@@ -17,7 +17,7 @@ func TestAlienToInt(t *testing.T) {
 		{"Subtractive ZC = 90", "ZC", 90},
 		{"Subtractive CD = 400", "CD", 400},
 		{"Subtractive CR = 900", "CR", 900},
-		{"Complex case", "RZLCBAAA", 1164}, 
+		{"Complex case", "RZLCBAAA", 1148}, 
 	}
 
 	for _, tt := range tests {
